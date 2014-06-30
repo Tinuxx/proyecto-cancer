@@ -1,0 +1,13 @@
+﻿.paddingGrid {
+    padding-left: 20%;
+}
+
+span.radioButtonList label {
+    text-align: left;
+    display: inline;
+    padding: 0 15px;
+}
+
+.centrarRadioButtons {
+    text-align: center;
+}

@@ -1,0 +1,93 @@
+<wsdl:definitions xmlns:tns="http://localhost/cancer-ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://localhost/cancer-ws/">
+    <wsdl:types>
+        <s:schema targetNamespace="http://localhost/cancer-ws/">
+            <s:complexType name="Paciente">
+                <s:annotation>
+                    <s:documentation>Description of Paciente</s:documentation>
+                </s:annotation>
+                <s:sequence>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="numeroCedula" type="s:int">
+                        <s:annotation>
+                            <s:documentation>CÃ©dula del paciente</s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="nombre" type="s:string">
+                        <s:annotation>
+                            <s:documentation>Nombre del paciente</s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="false" name="genero" type="s:boolean">
+                        <s:annotation>
+                            <s:documentation>GÃ©nero del paciente</s:documentation>
+                        </s:annotation>
+                    </s:element>
+                    <s:element minOccurs="1" maxOccurs="1" nillable="true" name="observaciones" type="s:string">
+                        <s:annotation>
+                            <s:documentation>Anotaciones hechas sobre el paciente</s:documentation>
+                        </s:annotation>
+                    </s:element>
+                </s:sequence>
+            </s:complexType>
+        </s:schema>
+    </wsdl:types>
+    <wsdl:message name="hacerEchoSoapIn">
+        <wsdl:part name="hilera" type="s:string">
+            <s:documentation>Hilera de la solicitud</s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="hacerEchoSoapOut">
+        <wsdl:part name="return" type="s:string">
+            <s:documentation>La misma hilera que fue enviada</s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getPacienteSoapIn">
+        <wsdl:part name="numeroCedula" type="s:int">
+            <s:documentation>NÃºmero de cÃ©dula del paciente</s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getPacienteSoapOut">
+        <wsdl:part name="return" type="tns:Paciente">
+            <s:documentation>Entidad paciente con cÃ©dula correspondiente</s:documentation>
+        </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="CancerwsSoap">
+        <wsdl:operation name="hacerEcho">
+            <wsdl:documentation>Obtener una hilera de vuelta</wsdl:documentation>
+            <wsdl:input message="tns:hacerEchoSoapIn"/>
+            <wsdl:output message="tns:hacerEchoSoapOut"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPaciente">
+            <wsdl:documentation>
+                Obtiene los datos de un paciente, segÃºn su cÃ©dula de identidad
+</wsdl:documentation>
+            <wsdl:input message="tns:getPacienteSoapIn"/>
+            <wsdl:output message="tns:getPacienteSoapOut"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CancerwsSoap" type="tns:CancerwsSoap">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc"/>
+        <wsdl:operation name="hacerEcho">
+            <soap:operation soapAction="http://localhost/cancer-ws/hacerEcho"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cancer-ws/" parts="hilera"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cancer-ws/" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPaciente">
+            <soap:operation soapAction="http://localhost/cancer-ws/getPaciente"/>
+            <wsdl:input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cancer-ws/" parts="numeroCedula"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://localhost/cancer-ws/" parts="return"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Cancerws">
+        <wsdl:port name="CancerwsSoap" binding="tns:CancerwsSoap">
+            <soap:address location="http://localhost/cancer-ws/pruebaws.php"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
