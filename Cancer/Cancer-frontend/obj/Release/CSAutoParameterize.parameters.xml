@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="server=localhost;user id=root;persistsecurityinfo=True;database=bd_autenticacion;password=leonidas14" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tinoba\\Documents\\GitHub\\proyecto-cancer\\Cancer\\Cancer-frontend\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Cancer_frontend.Migrations.MySqlHistoryContext-Web.config Connection String" description="Cancer_frontend.Migrations.MySqlHistoryContext Connection String used in web.config by the application to access the database." defaultValue="Cancer_frontend.Migrations.MySqlHistoryContext_ConnectionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\tinoba\\Documents\\GitHub\\proyecto-cancer\\Cancer\\Cancer-frontend\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Cancer_frontend.Migrations.MySqlHistoryContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -157,12 +157,23 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\pure-skin-proyectocancer.css" />
     <Content Include="Content\side-menu.css" />
+    <Content Include="Eventos\ManejoEventos.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Paciente\AgregarPaciente.aspx" />
+    <Content Include="Paciente\BuscarPaciente.aspx" />
+    <Content Include="Paciente\Citometria\AgregarCitometria.aspx" />
+    <Content Include="Paciente\EditarPaciente.aspx" />
+    <Content Include="Paciente\InVitro\AgregarEnsayoInVitro.aspx" />
+    <Content Include="Paciente\InVitro\Placa\AgregarPlaca.aspx" />
+    <Content Include="Paciente\InVitro\Placa\Tratamiento\AgregarTratamiento.aspx" />
+    <Content Include="Paciente\Muestra\AgregarProcesamientoMuestra.aspx" />
+    <Content Include="Paciente\VerPaciente.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <None Include="Properties\PublishProfiles\CITIC - IIS.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -197,14 +208,13 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Variables\AdministracionVariables.aspx" />
-    <Content Include="VistaPrincipal.Master" />
+    <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
-    <Content Include="VistaDetalle.master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,6 +261,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Eventos\ManejoEventos.aspx.cs">
+      <DependentUpon>ManejoEventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos\ManejoEventos.aspx.designer.cs">
+      <DependentUpon>ManejoEventos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -258,6 +275,69 @@
     <Compile Include="Migrations\MySqlHistoryContext.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="MySqlInitializer.cs" />
+    <Compile Include="Paciente\AgregarPaciente.aspx.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\AgregarPaciente.aspx.designer.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\BuscarPaciente.aspx.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\BuscarPaciente.aspx.designer.cs">
+      <DependentUpon>BuscarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\Citometria\AgregarCitometria.aspx.cs">
+      <DependentUpon>AgregarCitometria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\Citometria\AgregarCitometria.aspx.designer.cs">
+      <DependentUpon>AgregarCitometria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\EditarPaciente.aspx.cs">
+      <DependentUpon>EditarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\EditarPaciente.aspx.designer.cs">
+      <DependentUpon>EditarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\InVitro\AgregarEnsayoInVitro.aspx.cs">
+      <DependentUpon>AgregarEnsayoInVitro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\InVitro\AgregarEnsayoInVitro.aspx.designer.cs">
+      <DependentUpon>AgregarEnsayoInVitro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\InVitro\Placa\AgregarPlaca.aspx.cs">
+      <DependentUpon>AgregarPlaca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\InVitro\Placa\AgregarPlaca.aspx.designer.cs">
+      <DependentUpon>AgregarPlaca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\InVitro\Placa\Tratamiento\AgregarTratamiento.aspx.cs">
+      <DependentUpon>AgregarTratamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\InVitro\Placa\Tratamiento\AgregarTratamiento.aspx.designer.cs">
+      <DependentUpon>AgregarTratamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\Muestra\AgregarProcesamientoMuestra.aspx.cs">
+      <DependentUpon>AgregarProcesamientoMuestra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\Muestra\AgregarProcesamientoMuestra.aspx.designer.cs">
+      <DependentUpon>AgregarProcesamientoMuestra.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paciente\VerPaciente.aspx.cs">
+      <DependentUpon>VerPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paciente\VerPaciente.aspx.designer.cs">
+      <DependentUpon>VerPaciente.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Variables\AdministracionVariables.aspx.cs">
       <DependentUpon>AdministracionVariables.aspx</DependentUpon>
@@ -266,19 +346,12 @@
     <Compile Include="Variables\AdministracionVariables.aspx.designer.cs">
       <DependentUpon>AdministracionVariables.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VistaDetalle.master.cs">
-      <DependentUpon>VistaDetalle.master</DependentUpon>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="VistaDetalle.master.designer.cs">
-      <DependentUpon>VistaDetalle.master</DependentUpon>
-    </Compile>
-    <Compile Include="VistaPrincipal.Master.cs">
-      <DependentUpon>VistaPrincipal.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VistaPrincipal.Master.designer.cs">
-      <DependentUpon>VistaPrincipal.Master</DependentUpon>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
@@ -298,8 +371,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Eventos\" />
-    <Folder Include="Pacientes\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

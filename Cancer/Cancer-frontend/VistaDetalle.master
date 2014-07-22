@@ -1,3 +1,0 @@
-﻿<%@ Master Language="C#" MasterPageFile="~/VistaPrincipal.Master" AutoEventWireup="true" CodeBehind="VistaDetalle.master.cs" Inherits="Cancer_frontend.VistaDetalle" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-</asp:Content>
