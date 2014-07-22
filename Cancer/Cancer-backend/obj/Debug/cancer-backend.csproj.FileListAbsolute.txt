@@ -1,0 +1,6 @@
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\cancer-backend.dll.config
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\cancer-backend.dll
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\cancer-backend.pdb
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.csprojResolveAssemblyReference.cache
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.dll
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.pdb

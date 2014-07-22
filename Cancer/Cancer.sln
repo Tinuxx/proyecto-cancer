@@ -3,28 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Cancer-frontend(1)", "http://localhost:1385", "{AD3A5F70-D0F1-494D-943C-A96A128965DB}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_1385"
-		Debug.AspNetCompiler.PhysicalPath = "Cancer-frontend\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1385\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_1385"
-		Release.AspNetCompiler.PhysicalPath = "Cancer-frontend\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_1385\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "Cancer-frontend\"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cancer-backend", "cancer-backend\cancer-backend.csproj", "{F126244B-AB6F-42BF-9411-85DAA87D5D84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancer-frontend", "Cancer-frontend\Cancer-frontend.csproj", "{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AD3A5F70-D0F1-494D-943C-A96A128965DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD3A5F70-D0F1-494D-943C-A96A128965DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD3A5F70-D0F1-494D-943C-A96A128965DB}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD3A5F70-D0F1-494D-943C-A96A128965DB}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{F126244B-AB6F-42BF-9411-85DAA87D5D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F126244B-AB6F-42BF-9411-85DAA87D5D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F126244B-AB6F-42BF-9411-85DAA87D5D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F126244B-AB6F-42BF-9411-85DAA87D5D84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

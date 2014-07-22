@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class MasterPage : System.Web.UI.MasterPage
+namespace Cancer_frontend
 {
-    protected string cedulaPaciente { get; set; }
-    protected string apellidoPaciente { get; set; }
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        
-    }
+	public partial class VistaDetalle : System.Web.UI.MasterPage
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
