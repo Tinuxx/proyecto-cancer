@@ -10,3 +10,7 @@ C:\Users\tinoba\Documents\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug
 C:\Users\tinoba\Documents\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.csprojResolveAssemblyReference.cache
 C:\Users\tinoba\Documents\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.dll
 C:\Users\tinoba\Documents\GitHub\proyecto-cancer\Cancer\cancer-backend\obj\Debug\cancer-backend.pdb
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\EntityFramework.dll
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\System.Data.dll
+C:\Users\Tino\GitHub\proyecto-cancer\Cancer\cancer-backend\bin\Debug\EntityFramework.xml

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91e0094489c94f578995f47b9d0e95e8" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectoCancerModel.casacomercial" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.citometria" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.componenteregla" Width="1.5" PointX="9" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.conjuntoexamenes" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.consistede" Width="1.5" PointX="8.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.droga" Width="1.5" PointX="6" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.ensayoinvitro" Width="1.5" PointX="11.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.estacompuestade" Width="1.5" PointX="13.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.examen" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.indice" Width="1.5" PointX="6.75" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.localizacion" Width="1.5" PointX="3.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.log" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.marcadores" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.medico" Width="1.5" PointX="3.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.muestra" Width="1.5" PointX="6" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.paciente" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.patologia" Width="1.5" PointX="8.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.secomponede" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.seguimiento" Width="1.5" PointX="3" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.semideen" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.seobtienen" Width="1.5" PointX="10.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.terapiapersonalizada" Width="1.5" PointX="6" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.tiene" Width="1.5" PointX="13.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.tipotumor" Width="1.5" PointX="3.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.tratamientoenmuestra" Width="1.5" PointX="9" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoCancerModel.usuario" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Droga_CasaComercial1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Citometria_Muestra1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_SeMideEn_Citometria1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_componenteRegla_Indice1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EnsayoInVitro_componenteRegla1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_ConjuntoExamenes_Medico1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_ConjuntoExamenes_Paciente1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Examen_has_ConjuntoExamenes_ConjuntoExamenes1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Examen_has_ConjuntoExamenes_Examen1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TerapiaPersonalizada_has_Droga_Droga1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TratamientoEnMuestra_has_Droga_Droga1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EnsayoInVitro_Muestra1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EnsayoInVitro_TratamientoEnMuestra1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EnsayoInVitro_TratamientoEnMuestra2" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EstaCompuestaDe_EnsayoInVitro1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EnsayoInVitro_has_TratamientoEnMuestra_TratamientoEnMuestra1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_EstaCompuestaDe_Indices1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Muestra_Localizacion1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Log_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Log_Usuario1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Marcadores_has_Citometria_Marcadores1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Marcadores_has_Patologia_Marcadores1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Seguimiento_Medico1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TerapiaPersonalizada_Medico1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Muestra_Paciente1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Muestra_TipoTumor1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Patologia_Muestra1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_Seguimiento_Paciente1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TerapiaPersonalizada_Paciente1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TerapiaPersonalizada_has_Droga_TerapiaPersonalizada1" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoCancerModel.fk_TratamientoEnMuestra_has_Droga_TratamientoEnMuestra1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

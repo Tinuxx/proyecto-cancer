@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cancer-backend", "cancer-backend\cancer-backend.csproj", "{F126244B-AB6F-42BF-9411-85DAA87D5D84}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cancer-frontend", "Cancer-frontend\Cancer-frontend.csproj", "{4AAD7075-E143-4AB1-BC55-E33CB4FB01EC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F126244B-AB6F-42BF-9411-85DAA87D5D84} = {F126244B-AB6F-42BF-9411-85DAA87D5D84}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

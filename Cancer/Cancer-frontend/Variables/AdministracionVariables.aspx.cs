@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
+using Cancer_frontend.Cancer_WS;
 
 namespace Cancer_frontend.Variables
 {
@@ -15,8 +16,11 @@ namespace Cancer_frontend.Variables
 			HtmlGenericControl li = (HtmlGenericControl) Master.FindControl("liAdminVariables");
 			li.Attributes.Add("class", "pure-menu-selected");
 
-			//Prueba: poblar gridview de drogas
-
+			//Poblar gridview de drogas
+			Cancer_wsClient cliente = new Cancer_wsClient();
+			List<DrogaDTO> listaDrogas = cliente.obtenerListaDrogas();
+			gridDrogas.DataSource = listaDrogas;
+			gridDrogas.DataBind();
 		}
 	}
 }

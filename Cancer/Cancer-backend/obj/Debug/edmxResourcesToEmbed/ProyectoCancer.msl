@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoCancerModelStoreContainer" CdmEntityContainer="ProyectoCancerEntities">
+    <EntitySetMapping Name="casacomercial">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.casacomercial">
+        <MappingFragment StoreEntitySet="casacomercial">
+          <ScalarProperty Name="idCasaComercial" ColumnName="idCasaComercial" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="citometria">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.citometria">
+        <MappingFragment StoreEntitySet="citometria">
+          <ScalarProperty Name="fechaRealizado" ColumnName="fechaRealizado" />
+          <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="validado" ColumnName="validado" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="pdfCitometro" ColumnName="pdfCitometro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="componenteregla">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.componenteregla">
+        <MappingFragment StoreEntitySet="componenteregla">
+          <ScalarProperty Name="idComponenteRegla" ColumnName="idComponenteRegla" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="relacion" ColumnName="relacion" />
+          <ScalarProperty Name="Indice_id" ColumnName="Indice_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conjuntoexamenes">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.conjuntoexamenes">
+        <MappingFragment StoreEntitySet="conjuntoexamenes">
+          <ScalarProperty Name="fechaEnviados" ColumnName="fechaEnviados" />
+          <ScalarProperty Name="Paciente_numeroCedula" ColumnName="Paciente_numeroCedula" />
+          <ScalarProperty Name="Medico_idMedico" ColumnName="Medico_idMedico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consistede">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.consistede">
+        <MappingFragment StoreEntitySet="consistede">
+          <ScalarProperty Name="nombreExamen" ColumnName="nombreExamen" />
+          <ScalarProperty Name="fechaEnviadosExamenes" ColumnName="fechaEnviadosExamenes" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="medico" ColumnName="medico" />
+          <ScalarProperty Name="fechaExamen" ColumnName="fechaExamen" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="pronostico" ColumnName="pronostico" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="droga">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.droga">
+        <MappingFragment StoreEntitySet="droga">
+          <ScalarProperty Name="idDroga" ColumnName="idDroga" />
+          <ScalarProperty Name="idCasaComercial" ColumnName="idCasaComercial" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="storageAndStability" ColumnName="storageAndStability" />
+          <ScalarProperty Name="C100_TDC" ColumnName="100%TDC" />
+          <ScalarProperty Name="stockSolution" ColumnName="stockSolution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ensayoinvitro">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.ensayoinvitro">
+        <MappingFragment StoreEntitySet="ensayoinvitro">
+          <ScalarProperty Name="fechaHoraEnsayo" ColumnName="fechaHoraEnsayo" />
+          <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="tratamientoMasEfectivo" ColumnName="tratamientoMasEfectivo" />
+          <ScalarProperty Name="tratamientoMenosEfectivo" ColumnName="tratamientoMenosEfectivo" />
+          <ScalarProperty Name="fechaEnvioResultadoOncologo" ColumnName="fechaEnvioResultadoOncologo" />
+          <ScalarProperty Name="diasDuracionEnsayo" ColumnName="diasDuracionEnsayo" />
+          <ScalarProperty Name="realizadoPor" ColumnName="realizadoPor" />
+          <ScalarProperty Name="validado" ColumnName="validado" />
+          <ScalarProperty Name="celulasPorPozo" ColumnName="celulasPorPozo" />
+          <ScalarProperty Name="loteKit" ColumnName="loteKit" />
+          <ScalarProperty Name="datosCrudos" ColumnName="datosCrudos" />
+          <ScalarProperty Name="recomendaciones" ColumnName="recomendaciones" />
+          <ScalarProperty Name="congelaronExtractos" ColumnName="congelaronExtractos" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="ComponenteRegla_idComponenteRegla" ColumnName="ComponenteRegla_idComponenteRegla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estacompuestade">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.estacompuestade">
+        <MappingFragment StoreEntitySet="estacompuestade">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+          <ScalarProperty Name="fechaHoraEnsayo" ColumnName="fechaHoraEnsayo" />
+          <ScalarProperty Name="idTratamiento" ColumnName="idTratamiento" />
+          <ScalarProperty Name="indice" ColumnName="indice" />
+          <ScalarProperty Name="numeroPlaca" ColumnName="numeroPlaca" />
+          <ScalarProperty Name="ordenEnPlaca" ColumnName="ordenEnPlaca" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="examen">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.examen">
+        <MappingFragment StoreEntitySet="examen">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="indice">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.indice">
+        <MappingFragment StoreEntitySet="indice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="localizacion">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.localizacion">
+        <MappingFragment StoreEntitySet="localizacion">
+          <ScalarProperty Name="idLocalizacion" ColumnName="idLocalizacion" />
+          <ScalarProperty Name="localizacion1" ColumnName="localizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="log">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.log">
+        <MappingFragment StoreEntitySet="log">
+          <ScalarProperty Name="Paciente_numeroCedula" ColumnName="Paciente_numeroCedula" />
+          <ScalarProperty Name="Usuario_nombreUsuario" ColumnName="Usuario_nombreUsuario" />
+          <ScalarProperty Name="fechaHora" ColumnName="fechaHora" />
+          <ScalarProperty Name="tipoAccion" ColumnName="tipoAccion" />
+          <ScalarProperty Name="idTablaAfectada" ColumnName="idTablaAfectada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="marcadores">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.marcadores">
+        <MappingFragment StoreEntitySet="marcadores">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medico">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.medico">
+        <MappingFragment StoreEntitySet="medico">
+          <ScalarProperty Name="idMedico" ColumnName="idMedico" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="hospital" ColumnName="hospital" />
+          <ScalarProperty Name="servicio" ColumnName="servicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="muestra">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.muestra">
+        <MappingFragment StoreEntitySet="muestra">
+          <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="idTipoTumor" ColumnName="idTipoTumor" />
+          <ScalarProperty Name="idLocalizacion" ColumnName="idLocalizacion" />
+          <ScalarProperty Name="fechaHoraProcesada" ColumnName="fechaHoraProcesada" />
+          <ScalarProperty Name="consistencia" ColumnName="consistencia" />
+          <ScalarProperty Name="pruebaEsterilidad" ColumnName="pruebaEsterilidad" />
+          <ScalarProperty Name="encargadoDeProcesar" ColumnName="encargadoDeProcesar" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="temperaturaAdecuada" ColumnName="temperaturaAdecuada" />
+          <ScalarProperty Name="separacionFicoll" ColumnName="separacionFicoll" />
+          <ScalarProperty Name="refrigeradoAntesDelAnalisis" ColumnName="refrigeradoAntesDelAnalisis" />
+          <ScalarProperty Name="fechaHoraLlegadaPatologia" ColumnName="fechaHoraLlegadaPatologia" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="conteoCelulasVivas" ColumnName="conteoCelulasVivas" />
+          <ScalarProperty Name="volumen" ColumnName="volumen" />
+          <ScalarProperty Name="porcentajeViabilidad" ColumnName="porcentajeViabilidad" />
+          <ScalarProperty Name="contaminacionEritrocitos" ColumnName="contaminacionEritrocitos" />
+          <ScalarProperty Name="apropiada" ColumnName="apropiada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paciente">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.paciente">
+        <MappingFragment StoreEntitySet="paciente">
+          <ScalarProperty Name="numeroCedula" ColumnName="numeroCedula" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="patologia">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.patologia">
+        <MappingFragment StoreEntitySet="patologia">
+          <ScalarProperty Name="idMuestra" ColumnName="idMuestra" />
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="idPatologia" ColumnName="idPatologia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="secomponede">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.secomponede">
+        <MappingFragment StoreEntitySet="secomponede">
+          <ScalarProperty Name="paciente" ColumnName="paciente" />
+          <ScalarProperty Name="medico" ColumnName="medico" />
+          <ScalarProperty Name="fechaRealizadaTerapia" ColumnName="fechaRealizadaTerapia" />
+          <ScalarProperty Name="idDroga" ColumnName="idDroga" />
+          <ScalarProperty Name="dosis" ColumnName="dosis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seguimiento">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.seguimiento">
+        <MappingFragment StoreEntitySet="seguimiento">
+          <ScalarProperty Name="fechaSeguimiento" ColumnName="fechaSeguimiento" />
+          <ScalarProperty Name="Paciente_numeroCedula" ColumnName="Paciente_numeroCedula" />
+          <ScalarProperty Name="Medico_idMedico" ColumnName="Medico_idMedico" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="estadio" ColumnName="estadio" />
+          <ScalarProperty Name="categoria" ColumnName="categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="semideen">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.semideen">
+        <MappingFragment StoreEntitySet="semideen">
+          <ScalarProperty Name="nombreMarcador" ColumnName="nombreMarcador" />
+          <ScalarProperty Name="Citometria_fechaRealizado" ColumnName="Citometria_fechaRealizado" />
+          <ScalarProperty Name="Citometria_idMuestra" ColumnName="Citometria_idMuestra" />
+          <ScalarProperty Name="Citometria_paciente" ColumnName="Citometria_paciente" />
+          <ScalarProperty Name="porcentajePositivo" ColumnName="porcentajePositivo" />
+          <ScalarProperty Name="porcentajeNegativo" ColumnName="porcentajeNegativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="seobtienen">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.seobtienen">
+        <MappingFragment StoreEntitySet="seobtienen">
+          <ScalarProperty Name="Marcadores_nombre" ColumnName="Marcadores_nombre" />
+          <ScalarProperty Name="Patologia_idMuestra" ColumnName="Patologia_idMuestra" />
+          <ScalarProperty Name="Patologia_paciente" ColumnName="Patologia_paciente" />
+          <ScalarProperty Name="porcentajePositivo" ColumnName="porcentajePositivo" />
+          <ScalarProperty Name="porcentajeNegativo" ColumnName="porcentajeNegativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="terapiapersonalizada">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.terapiapersonalizada">
+        <MappingFragment StoreEntitySet="terapiapersonalizada">
+          <ScalarProperty Name="Paciente_numeroCedula" ColumnName="Paciente_numeroCedula" />
+          <ScalarProperty Name="Medico_idMedico" ColumnName="Medico_idMedico" />
+          <ScalarProperty Name="fechaRealizada" ColumnName="fechaRealizada" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiene">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.tiene">
+        <MappingFragment StoreEntitySet="tiene">
+          <ScalarProperty Name="tratamiento" ColumnName="tratamiento" />
+          <ScalarProperty Name="droga" ColumnName="droga" />
+          <ScalarProperty Name="dosis" ColumnName="dosis" />
+          <ScalarProperty Name="lote_Droga" ColumnName="lote_Droga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipotumor">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.tipotumor">
+        <MappingFragment StoreEntitySet="tipotumor">
+          <ScalarProperty Name="idTipoTumor" ColumnName="idTipoTumor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tratamientoenmuestra">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.tratamientoenmuestra">
+        <MappingFragment StoreEntitySet="tratamientoenmuestra">
+          <ScalarProperty Name="idTratamientoEnMuestra" ColumnName="idTratamientoEnMuestra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="ProyectoCancerModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="nombreDespliegue" ColumnName="nombreDespliegue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -14,7 +14,6 @@ namespace Cancer_frontend.Pacientes
         {
             HtmlGenericControl li = (HtmlGenericControl)Master.FindControl("liBuscarPaciente");
             li.Attributes.Add("class", "pure-menu-selected");
-            ltrEncabezadoDetallePaciente.Text = "<h2 class=&quot;content-subhead&quot;>" + "1-1021-0451 - Roberto Gómez Bolaños" + "</h2>";
         }
         protected void btnConMuestras_Click(object sender, EventArgs e)
         {
@@ -66,9 +65,10 @@ namespace Cancer_frontend.Pacientes
                 mtvPanelBusqueda.SetActiveView(viewResultadosBusquedaHilera);
             }
         }
-        protected void btnRegresarDetallePaciente_Click(object sender, EventArgs e)
-        {
-            mtvBusquedaDetalle.SetActiveView(viewBusqueda);
-        }
+
+		protected void btnVolverBusqueda_Click(object sender, EventArgs e)
+		{
+			mtvPanelBusqueda.SetActiveView(viewBusquedaRapida);
+		}
     }
 }

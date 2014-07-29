@@ -60,7 +60,7 @@
                             <AnonymousTemplate>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li><a runat="server" href="~/Account/Register"><i class="fa fa-fw fa-user"></i> Registrarse</a></li>
-                                    <li><a runat="server" href="~/Account/Login"><i class="fa fa-fw fa-arrow-circle-o-right"></i>Iniciar Sesión</a></li>
+                                    <li><a runat="server" href="~/Account/Login"><i class="fa fa-fw fa-arrow-circle-o-right"></i> Iniciar Sesión</a></li>
                                 </ul>
                             </AnonymousTemplate>
                             <LoggedInTemplate>

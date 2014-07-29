@@ -1,11 +1,14 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/VistaPrincipal.Master" AutoEventWireup="true" CodeBehind="AdministracionVariables.aspx.cs" Inherits="Cancer_frontend.Variables.AdministracionVariables" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdministracionVariables.aspx.cs" Inherits="Cancer_frontend.Variables.AdministracionVariables" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h2 class="content-subhead">Administración de Variables</h2>
     <div class="pure-g">
         <div class="pure-u-1 pure-form">
-            <asp:GridView ID="gridDrogas"  runat="server">
-                
-            </asp:GridView>
+            <fieldset>
+                <legend>Detalles de las drogas</legend>
+                <asp:GridView ID="gridDrogas" AutoGenerateColumns="true" runat="server">
+                </asp:GridView>
+            </fieldset>
+            
             <br />
             <div class="pure-form">
                 <fieldset>

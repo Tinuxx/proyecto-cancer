@@ -1,0 +1,844 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoCancerModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="casacomercial">
+    <Key>
+      <PropertyRef Name="idCasaComercial" />
+    </Key>
+    <Property Name="idCasaComercial" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
+  </EntityType>
+  <EntityType Name="citometria">
+    <Key>
+      <PropertyRef Name="fechaRealizado" />
+      <PropertyRef Name="idMuestra" />
+      <PropertyRef Name="paciente" />
+    </Key>
+    <Property Name="fechaRealizado" Type="date" Nullable="false" />
+    <Property Name="idMuestra" Type="int" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="validado" Type="bool" />
+    <Property Name="observaciones" Type="varchar" MaxLength="1000" />
+    <Property Name="pdfCitometro" Type="mediumblob" />
+  </EntityType>
+  <EntityType Name="componenteregla">
+    <Key>
+      <PropertyRef Name="idComponenteRegla" />
+    </Key>
+    <Property Name="idComponenteRegla" Type="int" Nullable="false" />
+    <Property Name="valor" Type="int" />
+    <Property Name="relacion" Type="int" />
+    <Property Name="Indice_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="conjuntoexamenes">
+    <Key>
+      <PropertyRef Name="fechaEnviados" />
+      <PropertyRef Name="Paciente_numeroCedula" />
+      <PropertyRef Name="Medico_idMedico" />
+    </Key>
+    <Property Name="fechaEnviados" Type="date" Nullable="false" />
+    <Property Name="Paciente_numeroCedula" Type="int" Nullable="false" />
+    <Property Name="Medico_idMedico" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="consistede">
+    <Key>
+      <PropertyRef Name="nombreExamen" />
+      <PropertyRef Name="fechaEnviadosExamenes" />
+      <PropertyRef Name="paciente" />
+      <PropertyRef Name="medico" />
+    </Key>
+    <Property Name="nombreExamen" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fechaEnviadosExamenes" Type="date" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="medico" Type="int" Nullable="false" />
+    <Property Name="fechaExamen" Type="date" />
+    <Property Name="resultado" Type="varchar" MaxLength="1000" />
+    <Property Name="pronostico" Type="varchar" MaxLength="1000" />
+    <Property Name="diagnostico" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="droga">
+    <Key>
+      <PropertyRef Name="idDroga" />
+    </Key>
+    <Property Name="idDroga" Type="int" Nullable="false" />
+    <Property Name="idCasaComercial" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="storageAndStability" Type="varchar" MaxLength="500" />
+    <Property Name="100%TDC" Type="float" />
+    <Property Name="stockSolution" Type="float" />
+  </EntityType>
+  <EntityType Name="ensayoinvitro">
+    <Key>
+      <PropertyRef Name="fechaHoraEnsayo" />
+      <PropertyRef Name="idMuestra" />
+      <PropertyRef Name="paciente" />
+    </Key>
+    <Property Name="fechaHoraEnsayo" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="idMuestra" Type="int" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="tratamientoMasEfectivo" Type="int" />
+    <Property Name="tratamientoMenosEfectivo" Type="int" />
+    <Property Name="fechaEnvioResultadoOncologo" Type="date" />
+    <Property Name="diasDuracionEnsayo" Type="int" />
+    <Property Name="realizadoPor" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="validado" Type="bool" />
+    <Property Name="celulasPorPozo" Type="int" />
+    <Property Name="loteKit" Type="int" />
+    <Property Name="datosCrudos" Type="mediumblob" />
+    <Property Name="recomendaciones" Type="varchar" MaxLength="500" />
+    <Property Name="congelaronExtractos" Type="bool" />
+    <Property Name="resultado" Type="mediumblob" />
+    <Property Name="ComponenteRegla_idComponenteRegla" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="estacompuestade">
+    <Key>
+      <PropertyRef Name="paciente" />
+      <PropertyRef Name="idMuestra" />
+      <PropertyRef Name="fechaHoraEnsayo" />
+      <PropertyRef Name="idTratamiento" />
+      <PropertyRef Name="indice" />
+    </Key>
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="idMuestra" Type="int" Nullable="false" />
+    <Property Name="fechaHoraEnsayo" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="idTratamiento" Type="int" Nullable="false" />
+    <Property Name="indice" Type="int" Nullable="false" />
+    <Property Name="numeroPlaca" Type="int" />
+    <Property Name="ordenEnPlaca" Type="int" />
+    <Property Name="valor" Type="float" />
+  </EntityType>
+  <EntityType Name="examen">
+    <Key>
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="indice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="localizacion">
+    <Key>
+      <PropertyRef Name="idLocalizacion" />
+    </Key>
+    <Property Name="idLocalizacion" Type="int" Nullable="false" />
+    <Property Name="localizacion" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="log">
+    <Key>
+      <PropertyRef Name="Paciente_numeroCedula" />
+      <PropertyRef Name="Usuario_nombreUsuario" />
+      <PropertyRef Name="fechaHora" />
+    </Key>
+    <Property Name="Paciente_numeroCedula" Type="int" Nullable="false" />
+    <Property Name="Usuario_nombreUsuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="fechaHora" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="tipoAccion" Type="int" Nullable="false" />
+    <Property Name="idTablaAfectada" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="marcadores">
+    <Key>
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="medico">
+    <Key>
+      <PropertyRef Name="idMedico" />
+    </Key>
+    <Property Name="idMedico" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hospital" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="servicio" Type="int" />
+  </EntityType>
+  <EntityType Name="muestra">
+    <Key>
+      <PropertyRef Name="idMuestra" />
+      <PropertyRef Name="paciente" />
+    </Key>
+    <Property Name="idMuestra" Type="int" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="idTipoTumor" Type="int" Nullable="false" />
+    <Property Name="idLocalizacion" Type="int" Nullable="false" />
+    <Property Name="fechaHoraProcesada" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="consistencia" Type="varchar" MaxLength="100" />
+    <Property Name="pruebaEsterilidad" Type="bool" />
+    <Property Name="encargadoDeProcesar" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="1000" />
+    <Property Name="temperaturaAdecuada" Type="bool" />
+    <Property Name="separacionFicoll" Type="bool" />
+    <Property Name="refrigeradoAntesDelAnalisis" Type="bool" />
+    <Property Name="fechaHoraLlegadaPatologia" Type="datetime" Precision="0" />
+    <Property Name="peso" Type="double" />
+    <Property Name="conteoCelulasVivas" Type="int" />
+    <Property Name="volumen" Type="double" />
+    <Property Name="porcentajeViabilidad" Type="double" />
+    <Property Name="contaminacionEritrocitos" Type="bool" />
+    <Property Name="apropiada" Type="bool" />
+  </EntityType>
+  <EntityType Name="paciente">
+    <Key>
+      <PropertyRef Name="numeroCedula" />
+    </Key>
+    <Property Name="numeroCedula" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="genero" Type="bool" Nullable="false" />
+    <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+    <Property Name="observaciones" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="patologia">
+    <Key>
+      <PropertyRef Name="idMuestra" />
+      <PropertyRef Name="paciente" />
+      <PropertyRef Name="idPatologia" />
+    </Key>
+    <Property Name="idMuestra" Type="int" Nullable="false" />
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="idPatologia" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="secomponede">
+    <Key>
+      <PropertyRef Name="paciente" />
+      <PropertyRef Name="medico" />
+      <PropertyRef Name="fechaRealizadaTerapia" />
+      <PropertyRef Name="idDroga" />
+    </Key>
+    <Property Name="paciente" Type="int" Nullable="false" />
+    <Property Name="medico" Type="int" Nullable="false" />
+    <Property Name="fechaRealizadaTerapia" Type="date" Nullable="false" />
+    <Property Name="idDroga" Type="int" Nullable="false" />
+    <Property Name="dosis" Type="float" />
+  </EntityType>
+  <EntityType Name="seguimiento">
+    <Key>
+      <PropertyRef Name="fechaSeguimiento" />
+      <PropertyRef Name="Paciente_numeroCedula" />
+      <PropertyRef Name="Medico_idMedico" />
+    </Key>
+    <Property Name="fechaSeguimiento" Type="date" Nullable="false" />
+    <Property Name="Paciente_numeroCedula" Type="int" Nullable="false" />
+    <Property Name="Medico_idMedico" Type="int" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="500" />
+    <Property Name="estadio" Type="int" />
+    <Property Name="categoria" Type="int" />
+  </EntityType>
+  <EntityType Name="semideen">
+    <Key>
+      <PropertyRef Name="nombreMarcador" />
+      <PropertyRef Name="Citometria_fechaRealizado" />
+      <PropertyRef Name="Citometria_idMuestra" />
+      <PropertyRef Name="Citometria_paciente" />
+    </Key>
+    <Property Name="nombreMarcador" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Citometria_fechaRealizado" Type="date" Nullable="false" />
+    <Property Name="Citometria_idMuestra" Type="int" Nullable="false" />
+    <Property Name="Citometria_paciente" Type="int" Nullable="false" />
+    <Property Name="porcentajePositivo" Type="float" />
+    <Property Name="porcentajeNegativo" Type="float" />
+  </EntityType>
+  <EntityType Name="seobtienen">
+    <Key>
+      <PropertyRef Name="Marcadores_nombre" />
+      <PropertyRef Name="Patologia_idMuestra" />
+      <PropertyRef Name="Patologia_paciente" />
+    </Key>
+    <Property Name="Marcadores_nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Patologia_idMuestra" Type="int" Nullable="false" />
+    <Property Name="Patologia_paciente" Type="int" Nullable="false" />
+    <Property Name="porcentajePositivo" Type="float" />
+    <Property Name="porcentajeNegativo" Type="float" />
+  </EntityType>
+  <EntityType Name="terapiapersonalizada">
+    <Key>
+      <PropertyRef Name="Paciente_numeroCedula" />
+      <PropertyRef Name="Medico_idMedico" />
+      <PropertyRef Name="fechaRealizada" />
+    </Key>
+    <Property Name="Paciente_numeroCedula" Type="int" Nullable="false" />
+    <Property Name="Medico_idMedico" Type="int" Nullable="false" />
+    <Property Name="fechaRealizada" Type="date" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tiene">
+    <Key>
+      <PropertyRef Name="tratamiento" />
+      <PropertyRef Name="droga" />
+    </Key>
+    <Property Name="tratamiento" Type="int" Nullable="false" />
+    <Property Name="droga" Type="int" Nullable="false" />
+    <Property Name="dosis" Type="float" />
+    <Property Name="lote_Droga" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="tipotumor">
+    <Key>
+      <PropertyRef Name="idTipoTumor" />
+    </Key>
+    <Property Name="idTipoTumor" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tratamientoenmuestra">
+    <Key>
+      <PropertyRef Name="idTratamientoEnMuestra" />
+    </Key>
+    <Property Name="idTratamientoEnMuestra" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="nombreUsuario" />
+    </Key>
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombreDespliegue" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Citometria_Muestra1">
+    <End Role="muestra" Type="Self.muestra" Multiplicity="1" />
+    <End Role="citometria" Type="Self.citometria" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="muestra">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Principal>
+      <Dependent Role="citometria">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_componenteRegla_Indice1">
+    <End Role="indice" Type="Self.indice" Multiplicity="1" />
+    <End Role="componenteregla" Type="Self.componenteregla" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="indice">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="componenteregla">
+        <PropertyRef Name="Indice_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ConjuntoExamenes_Medico1">
+    <End Role="medico" Type="Self.medico" Multiplicity="1" />
+    <End Role="conjuntoexamenes" Type="Self.conjuntoexamenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medico">
+        <PropertyRef Name="idMedico" />
+      </Principal>
+      <Dependent Role="conjuntoexamenes">
+        <PropertyRef Name="Medico_idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ConjuntoExamenes_Paciente1">
+    <End Role="paciente" Type="Self.paciente" Multiplicity="1" />
+    <End Role="conjuntoexamenes" Type="Self.conjuntoexamenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="numeroCedula" />
+      </Principal>
+      <Dependent Role="conjuntoexamenes">
+        <PropertyRef Name="Paciente_numeroCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Droga_CasaComercial1">
+    <End Role="casacomercial" Type="Self.casacomercial" Multiplicity="1" />
+    <End Role="droga" Type="Self.droga" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="casacomercial">
+        <PropertyRef Name="idCasaComercial" />
+      </Principal>
+      <Dependent Role="droga">
+        <PropertyRef Name="idCasaComercial" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnsayoInVitro_componenteRegla1">
+    <End Role="componenteregla" Type="Self.componenteregla" Multiplicity="1" />
+    <End Role="ensayoinvitro" Type="Self.ensayoinvitro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="componenteregla">
+        <PropertyRef Name="idComponenteRegla" />
+      </Principal>
+      <Dependent Role="ensayoinvitro">
+        <PropertyRef Name="ComponenteRegla_idComponenteRegla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnsayoInVitro_has_TratamientoEnMuestra_TratamientoEnMuestra1">
+    <End Role="tratamientoenmuestra" Type="Self.tratamientoenmuestra" Multiplicity="1" />
+    <End Role="estacompuestade" Type="Self.estacompuestade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tratamientoenmuestra">
+        <PropertyRef Name="idTratamientoEnMuestra" />
+      </Principal>
+      <Dependent Role="estacompuestade">
+        <PropertyRef Name="idTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnsayoInVitro_Muestra1">
+    <End Role="muestra" Type="Self.muestra" Multiplicity="1" />
+    <End Role="ensayoinvitro" Type="Self.ensayoinvitro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="muestra">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Principal>
+      <Dependent Role="ensayoinvitro">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnsayoInVitro_TratamientoEnMuestra1">
+    <End Role="tratamientoenmuestra" Type="Self.tratamientoenmuestra" Multiplicity="0..1" />
+    <End Role="ensayoinvitro" Type="Self.ensayoinvitro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tratamientoenmuestra">
+        <PropertyRef Name="idTratamientoEnMuestra" />
+      </Principal>
+      <Dependent Role="ensayoinvitro">
+        <PropertyRef Name="tratamientoMasEfectivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EnsayoInVitro_TratamientoEnMuestra2">
+    <End Role="tratamientoenmuestra" Type="Self.tratamientoenmuestra" Multiplicity="0..1" />
+    <End Role="ensayoinvitro" Type="Self.ensayoinvitro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tratamientoenmuestra">
+        <PropertyRef Name="idTratamientoEnMuestra" />
+      </Principal>
+      <Dependent Role="ensayoinvitro">
+        <PropertyRef Name="tratamientoMenosEfectivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EstaCompuestaDe_EnsayoInVitro1">
+    <End Role="ensayoinvitro" Type="Self.ensayoinvitro" Multiplicity="1" />
+    <End Role="estacompuestade" Type="Self.estacompuestade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ensayoinvitro">
+        <PropertyRef Name="fechaHoraEnsayo" />
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Principal>
+      <Dependent Role="estacompuestade">
+        <PropertyRef Name="fechaHoraEnsayo" />
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_EstaCompuestaDe_Indices1">
+    <End Role="indice" Type="Self.indice" Multiplicity="1" />
+    <End Role="estacompuestade" Type="Self.estacompuestade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="indice">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="estacompuestade">
+        <PropertyRef Name="indice" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Examen_has_ConjuntoExamenes_ConjuntoExamenes1">
+    <End Role="conjuntoexamenes" Type="Self.conjuntoexamenes" Multiplicity="1" />
+    <End Role="consistede" Type="Self.consistede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="conjuntoexamenes">
+        <PropertyRef Name="fechaEnviados" />
+        <PropertyRef Name="Paciente_numeroCedula" />
+        <PropertyRef Name="Medico_idMedico" />
+      </Principal>
+      <Dependent Role="consistede">
+        <PropertyRef Name="fechaEnviadosExamenes" />
+        <PropertyRef Name="paciente" />
+        <PropertyRef Name="medico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Examen_has_ConjuntoExamenes_Examen1">
+    <End Role="examen" Type="Self.examen" Multiplicity="1" />
+    <End Role="consistede" Type="Self.consistede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="examen">
+        <PropertyRef Name="nombre" />
+      </Principal>
+      <Dependent Role="consistede">
+        <PropertyRef Name="nombreExamen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Log_Paciente">
+    <End Role="paciente" Type="Self.paciente" Multiplicity="1" />
+    <End Role="log" Type="Self.log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="numeroCedula" />
+      </Principal>
+      <Dependent Role="log">
+        <PropertyRef Name="Paciente_numeroCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Log_Usuario1">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="1" />
+    <End Role="log" Type="Self.log" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="nombreUsuario" />
+      </Principal>
+      <Dependent Role="log">
+        <PropertyRef Name="Usuario_nombreUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Marcadores_has_Citometria_Marcadores1">
+    <End Role="marcadores" Type="Self.marcadores" Multiplicity="1" />
+    <End Role="semideen" Type="Self.semideen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marcadores">
+        <PropertyRef Name="nombre" />
+      </Principal>
+      <Dependent Role="semideen">
+        <PropertyRef Name="nombreMarcador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Marcadores_has_Patologia_Marcadores1">
+    <End Role="marcadores" Type="Self.marcadores" Multiplicity="1" />
+    <End Role="seobtienen" Type="Self.seobtienen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="marcadores">
+        <PropertyRef Name="nombre" />
+      </Principal>
+      <Dependent Role="seobtienen">
+        <PropertyRef Name="Marcadores_nombre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_Marcadores_has_Patologia_Patologia1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_Marcadores_has_Patologia_Patologia1" />-->
+  <Association Name="fk_Muestra_Localizacion1">
+    <End Role="localizacion" Type="Self.localizacion" Multiplicity="1" />
+    <End Role="muestra" Type="Self.muestra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="localizacion">
+        <PropertyRef Name="idLocalizacion" />
+      </Principal>
+      <Dependent Role="muestra">
+        <PropertyRef Name="idLocalizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Muestra_Paciente1">
+    <End Role="paciente" Type="Self.paciente" Multiplicity="1" />
+    <End Role="muestra" Type="Self.muestra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="numeroCedula" />
+      </Principal>
+      <Dependent Role="muestra">
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Muestra_TipoTumor1">
+    <End Role="tipotumor" Type="Self.tipotumor" Multiplicity="1" />
+    <End Role="muestra" Type="Self.muestra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipotumor">
+        <PropertyRef Name="idTipoTumor" />
+      </Principal>
+      <Dependent Role="muestra">
+        <PropertyRef Name="idTipoTumor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Patologia_Muestra1">
+    <End Role="muestra" Type="Self.muestra" Multiplicity="1" />
+    <End Role="patologia" Type="Self.patologia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="muestra">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Principal>
+      <Dependent Role="patologia">
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Seguimiento_Medico1">
+    <End Role="medico" Type="Self.medico" Multiplicity="1" />
+    <End Role="seguimiento" Type="Self.seguimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medico">
+        <PropertyRef Name="idMedico" />
+      </Principal>
+      <Dependent Role="seguimiento">
+        <PropertyRef Name="Medico_idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Seguimiento_Paciente1">
+    <End Role="paciente" Type="Self.paciente" Multiplicity="1" />
+    <End Role="seguimiento" Type="Self.seguimiento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="numeroCedula" />
+      </Principal>
+      <Dependent Role="seguimiento">
+        <PropertyRef Name="Paciente_numeroCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SeMideEn_Citometria1">
+    <End Role="citometria" Type="Self.citometria" Multiplicity="1" />
+    <End Role="semideen" Type="Self.semideen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="citometria">
+        <PropertyRef Name="fechaRealizado" />
+        <PropertyRef Name="idMuestra" />
+        <PropertyRef Name="paciente" />
+      </Principal>
+      <Dependent Role="semideen">
+        <PropertyRef Name="Citometria_fechaRealizado" />
+        <PropertyRef Name="Citometria_idMuestra" />
+        <PropertyRef Name="Citometria_paciente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TerapiaPersonalizada_has_Droga_Droga1">
+    <End Role="droga" Type="Self.droga" Multiplicity="1" />
+    <End Role="secomponede" Type="Self.secomponede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="droga">
+        <PropertyRef Name="idDroga" />
+      </Principal>
+      <Dependent Role="secomponede">
+        <PropertyRef Name="idDroga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TerapiaPersonalizada_has_Droga_TerapiaPersonalizada1">
+    <End Role="terapiapersonalizada" Type="Self.terapiapersonalizada" Multiplicity="1" />
+    <End Role="secomponede" Type="Self.secomponede" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="terapiapersonalizada">
+        <PropertyRef Name="Paciente_numeroCedula" />
+        <PropertyRef Name="Medico_idMedico" />
+        <PropertyRef Name="fechaRealizada" />
+      </Principal>
+      <Dependent Role="secomponede">
+        <PropertyRef Name="paciente" />
+        <PropertyRef Name="medico" />
+        <PropertyRef Name="fechaRealizadaTerapia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TerapiaPersonalizada_Medico1">
+    <End Role="medico" Type="Self.medico" Multiplicity="1" />
+    <End Role="terapiapersonalizada" Type="Self.terapiapersonalizada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medico">
+        <PropertyRef Name="idMedico" />
+      </Principal>
+      <Dependent Role="terapiapersonalizada">
+        <PropertyRef Name="Medico_idMedico" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TerapiaPersonalizada_Paciente1">
+    <End Role="paciente" Type="Self.paciente" Multiplicity="1" />
+    <End Role="terapiapersonalizada" Type="Self.terapiapersonalizada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paciente">
+        <PropertyRef Name="numeroCedula" />
+      </Principal>
+      <Dependent Role="terapiapersonalizada">
+        <PropertyRef Name="Paciente_numeroCedula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TratamientoEnMuestra_has_Droga_Droga1">
+    <End Role="droga" Type="Self.droga" Multiplicity="1" />
+    <End Role="tiene" Type="Self.tiene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="droga">
+        <PropertyRef Name="idDroga" />
+      </Principal>
+      <Dependent Role="tiene">
+        <PropertyRef Name="droga" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TratamientoEnMuestra_has_Droga_TratamientoEnMuestra1">
+    <End Role="tratamientoenmuestra" Type="Self.tratamientoenmuestra" Multiplicity="1" />
+    <End Role="tiene" Type="Self.tiene" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tratamientoenmuestra">
+        <PropertyRef Name="idTratamientoEnMuestra" />
+      </Principal>
+      <Dependent Role="tiene">
+        <PropertyRef Name="tratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProyectoCancerModelStoreContainer">
+    <EntitySet Name="casacomercial" EntityType="Self.casacomercial" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="citometria" EntityType="Self.citometria" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="componenteregla" EntityType="Self.componenteregla" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="conjuntoexamenes" EntityType="Self.conjuntoexamenes" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="consistede" EntityType="Self.consistede" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="droga" EntityType="Self.droga" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="ensayoinvitro" EntityType="Self.ensayoinvitro" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="estacompuestade" EntityType="Self.estacompuestade" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="examen" EntityType="Self.examen" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="indice" EntityType="Self.indice" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="localizacion" EntityType="Self.localizacion" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="log" EntityType="Self.log" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="marcadores" EntityType="Self.marcadores" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="medico" EntityType="Self.medico" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="muestra" EntityType="Self.muestra" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="paciente" EntityType="Self.paciente" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="patologia" EntityType="Self.patologia" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="secomponede" EntityType="Self.secomponede" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="seguimiento" EntityType="Self.seguimiento" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="semideen" EntityType="Self.semideen" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="seobtienen" EntityType="Self.seobtienen" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="terapiapersonalizada" EntityType="Self.terapiapersonalizada" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="tiene" EntityType="Self.tiene" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="tipotumor" EntityType="Self.tipotumor" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="tratamientoenmuestra" EntityType="Self.tratamientoenmuestra" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="bd_pruebasensibilidad" store:Type="Tables" />
+    <AssociationSet Name="fk_Citometria_Muestra1" Association="Self.fk_Citometria_Muestra1">
+      <End Role="muestra" EntitySet="muestra" />
+      <End Role="citometria" EntitySet="citometria" />
+    </AssociationSet>
+    <AssociationSet Name="fk_componenteRegla_Indice1" Association="Self.fk_componenteRegla_Indice1">
+      <End Role="indice" EntitySet="indice" />
+      <End Role="componenteregla" EntitySet="componenteregla" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ConjuntoExamenes_Medico1" Association="Self.fk_ConjuntoExamenes_Medico1">
+      <End Role="medico" EntitySet="medico" />
+      <End Role="conjuntoexamenes" EntitySet="conjuntoexamenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ConjuntoExamenes_Paciente1" Association="Self.fk_ConjuntoExamenes_Paciente1">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="conjuntoexamenes" EntitySet="conjuntoexamenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Droga_CasaComercial1" Association="Self.fk_Droga_CasaComercial1">
+      <End Role="casacomercial" EntitySet="casacomercial" />
+      <End Role="droga" EntitySet="droga" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnsayoInVitro_componenteRegla1" Association="Self.fk_EnsayoInVitro_componenteRegla1">
+      <End Role="componenteregla" EntitySet="componenteregla" />
+      <End Role="ensayoinvitro" EntitySet="ensayoinvitro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnsayoInVitro_has_TratamientoEnMuestra_TratamientoEnMuestra1" Association="Self.fk_EnsayoInVitro_has_TratamientoEnMuestra_TratamientoEnMuestra1">
+      <End Role="tratamientoenmuestra" EntitySet="tratamientoenmuestra" />
+      <End Role="estacompuestade" EntitySet="estacompuestade" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnsayoInVitro_Muestra1" Association="Self.fk_EnsayoInVitro_Muestra1">
+      <End Role="muestra" EntitySet="muestra" />
+      <End Role="ensayoinvitro" EntitySet="ensayoinvitro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnsayoInVitro_TratamientoEnMuestra1" Association="Self.fk_EnsayoInVitro_TratamientoEnMuestra1">
+      <End Role="tratamientoenmuestra" EntitySet="tratamientoenmuestra" />
+      <End Role="ensayoinvitro" EntitySet="ensayoinvitro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EnsayoInVitro_TratamientoEnMuestra2" Association="Self.fk_EnsayoInVitro_TratamientoEnMuestra2">
+      <End Role="tratamientoenmuestra" EntitySet="tratamientoenmuestra" />
+      <End Role="ensayoinvitro" EntitySet="ensayoinvitro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EstaCompuestaDe_EnsayoInVitro1" Association="Self.fk_EstaCompuestaDe_EnsayoInVitro1">
+      <End Role="ensayoinvitro" EntitySet="ensayoinvitro" />
+      <End Role="estacompuestade" EntitySet="estacompuestade" />
+    </AssociationSet>
+    <AssociationSet Name="fk_EstaCompuestaDe_Indices1" Association="Self.fk_EstaCompuestaDe_Indices1">
+      <End Role="indice" EntitySet="indice" />
+      <End Role="estacompuestade" EntitySet="estacompuestade" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Examen_has_ConjuntoExamenes_ConjuntoExamenes1" Association="Self.fk_Examen_has_ConjuntoExamenes_ConjuntoExamenes1">
+      <End Role="conjuntoexamenes" EntitySet="conjuntoexamenes" />
+      <End Role="consistede" EntitySet="consistede" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Examen_has_ConjuntoExamenes_Examen1" Association="Self.fk_Examen_has_ConjuntoExamenes_Examen1">
+      <End Role="examen" EntitySet="examen" />
+      <End Role="consistede" EntitySet="consistede" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Log_Paciente" Association="Self.fk_Log_Paciente">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="log" EntitySet="log" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Log_Usuario1" Association="Self.fk_Log_Usuario1">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="log" EntitySet="log" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Marcadores_has_Citometria_Marcadores1" Association="Self.fk_Marcadores_has_Citometria_Marcadores1">
+      <End Role="marcadores" EntitySet="marcadores" />
+      <End Role="semideen" EntitySet="semideen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Marcadores_has_Patologia_Marcadores1" Association="Self.fk_Marcadores_has_Patologia_Marcadores1">
+      <End Role="marcadores" EntitySet="marcadores" />
+      <End Role="seobtienen" EntitySet="seobtienen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Muestra_Localizacion1" Association="Self.fk_Muestra_Localizacion1">
+      <End Role="localizacion" EntitySet="localizacion" />
+      <End Role="muestra" EntitySet="muestra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Muestra_Paciente1" Association="Self.fk_Muestra_Paciente1">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="muestra" EntitySet="muestra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Muestra_TipoTumor1" Association="Self.fk_Muestra_TipoTumor1">
+      <End Role="tipotumor" EntitySet="tipotumor" />
+      <End Role="muestra" EntitySet="muestra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Patologia_Muestra1" Association="Self.fk_Patologia_Muestra1">
+      <End Role="muestra" EntitySet="muestra" />
+      <End Role="patologia" EntitySet="patologia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Seguimiento_Medico1" Association="Self.fk_Seguimiento_Medico1">
+      <End Role="medico" EntitySet="medico" />
+      <End Role="seguimiento" EntitySet="seguimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Seguimiento_Paciente1" Association="Self.fk_Seguimiento_Paciente1">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="seguimiento" EntitySet="seguimiento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SeMideEn_Citometria1" Association="Self.fk_SeMideEn_Citometria1">
+      <End Role="citometria" EntitySet="citometria" />
+      <End Role="semideen" EntitySet="semideen" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TerapiaPersonalizada_has_Droga_Droga1" Association="Self.fk_TerapiaPersonalizada_has_Droga_Droga1">
+      <End Role="droga" EntitySet="droga" />
+      <End Role="secomponede" EntitySet="secomponede" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TerapiaPersonalizada_has_Droga_TerapiaPersonalizada1" Association="Self.fk_TerapiaPersonalizada_has_Droga_TerapiaPersonalizada1">
+      <End Role="terapiapersonalizada" EntitySet="terapiapersonalizada" />
+      <End Role="secomponede" EntitySet="secomponede" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TerapiaPersonalizada_Medico1" Association="Self.fk_TerapiaPersonalizada_Medico1">
+      <End Role="medico" EntitySet="medico" />
+      <End Role="terapiapersonalizada" EntitySet="terapiapersonalizada" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TerapiaPersonalizada_Paciente1" Association="Self.fk_TerapiaPersonalizada_Paciente1">
+      <End Role="paciente" EntitySet="paciente" />
+      <End Role="terapiapersonalizada" EntitySet="terapiapersonalizada" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TratamientoEnMuestra_has_Droga_Droga1" Association="Self.fk_TratamientoEnMuestra_has_Droga_Droga1">
+      <End Role="droga" EntitySet="droga" />
+      <End Role="tiene" EntitySet="tiene" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TratamientoEnMuestra_has_Droga_TratamientoEnMuestra1" Association="Self.fk_TratamientoEnMuestra_has_Droga_TratamientoEnMuestra1">
+      <End Role="tratamientoenmuestra" EntitySet="tratamientoenmuestra" />
+      <End Role="tiene" EntitySet="tiene" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

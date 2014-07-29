@@ -13,33 +13,6 @@ namespace Cancer_frontend.Pacientes {
     public partial class BuscarPaciente {
         
         /// <summary>
-        /// updBusquedaDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updBusquedaDetalle;
-        
-        /// <summary>
-        /// mtvBusquedaDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView mtvBusquedaDetalle;
-        
-        /// <summary>
-        /// viewBusqueda control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View viewBusqueda;
-        
-        /// <summary>
         /// txtTerminoBusqueda control.
         /// </summary>
         /// <remarks>
@@ -263,68 +236,5 @@ namespace Cancer_frontend.Pacientes {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table tblResultadosBusqueda;
-        
-        /// <summary>
-        /// viewDetalle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View viewDetalle;
-        
-        /// <summary>
-        /// btnRegresarDetallePaciente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnRegresarDetallePaciente;
-        
-        /// <summary>
-        /// ltrEncabezadoDetallePaciente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ltrEncabezadoDetallePaciente;
-        
-        /// <summary>
-        /// btnAgregarMuestraPaciente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAgregarMuestraPaciente;
-        
-        /// <summary>
-        /// lstMuestras control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lstMuestras;
-        
-        /// <summary>
-        /// btnAgregarSeguimientoPaciente control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAgregarSeguimientoPaciente;
-        
-        /// <summary>
-        /// lstSeguimientos control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lstSeguimientos;
     }
 }
