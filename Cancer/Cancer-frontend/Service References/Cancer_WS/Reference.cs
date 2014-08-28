@@ -26,6 +26,9 @@ namespace Cancer_frontend.Cancer_WS {
         private string CasaComercialField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -56,6 +59,19 @@ namespace Cancer_frontend.Cancer_WS {
                 if ((object.ReferenceEquals(this.CasaComercialField, value) != true)) {
                     this.CasaComercialField = value;
                     this.RaisePropertyChanged("CasaComercial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
                 }
             }
         }
@@ -126,11 +142,11 @@ namespace Cancer_frontend.Cancer_WS {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Cancer_WS.ICancer_ws")]
     public interface ICancer_ws {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICancer_ws/GetData", ReplyAction="http://tempuri.org/ICancer_ws/GetDataResponse")]
-        string GetData(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICancer_ws/obtenerTotalDrogas", ReplyAction="http://tempuri.org/ICancer_ws/obtenerTotalDrogasResponse")]
+        int obtenerTotalDrogas();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICancer_ws/GetData", ReplyAction="http://tempuri.org/ICancer_ws/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICancer_ws/obtenerTotalDrogas", ReplyAction="http://tempuri.org/ICancer_ws/obtenerTotalDrogasResponse")]
+        System.Threading.Tasks.Task<int> obtenerTotalDrogasAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICancer_ws/obtenerListaDrogas", ReplyAction="http://tempuri.org/ICancer_ws/obtenerListaDrogasResponse")]
         System.Collections.Generic.List<Cancer_frontend.Cancer_WS.DrogaDTO> obtenerListaDrogas();
@@ -166,12 +182,12 @@ namespace Cancer_frontend.Cancer_WS {
                 base(binding, remoteAddress) {
         }
         
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
+        public int obtenerTotalDrogas() {
+            return base.Channel.obtenerTotalDrogas();
         }
         
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
+        public System.Threading.Tasks.Task<int> obtenerTotalDrogasAsync() {
+            return base.Channel.obtenerTotalDrogasAsync();
         }
         
         public System.Collections.Generic.List<Cancer_frontend.Cancer_WS.DrogaDTO> obtenerListaDrogas() {

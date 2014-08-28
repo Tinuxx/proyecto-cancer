@@ -11,25 +11,30 @@ namespace cancer_backend
     [ServiceContract]
     public interface ICancer_ws
     {
-        [OperationContract]
-        string GetData(int value);
-
-        // TODO: Add your service operations here
-
 		// Obtener listado de drogas
+		[OperationContract]
+		int obtenerTotalDrogas();
+
 		[OperationContract]
 		List<DrogaDTO> obtenerListaDrogas();
 
 		// Guardar nueva droga
+		[OperationContract]
+		int insertarDroga(DrogaDTO nuevaDroga);
 
 		// Modificar droga existente
+		[OperationContract]
+		int modificarDroga(int idDroga, DrogaDTO nuevosDatos);
 
 		// Eliminar droga
+		[OperationContract]
+		int eliminarDroga(int idDrogaAEliminar);
     }
 
 	[DataContract]
 	public class DrogaDTO
 	{
+		int id = 0;
 		string nombre="";
 		string storageAndStability="";
 		float? porcentajeTDC=0F;
@@ -38,11 +43,19 @@ namespace cancer_backend
 
 		public DrogaDTO(droga droga)
 		{
+			this.id = droga.idDroga;
 			this.nombre = droga.nombre;
 			this.storageAndStability = droga.storageAndStability;
 			this.porcentajeTDC = droga.C100_TDC;
 			this.stockSolution = droga.stockSolution;
 			this.casaComercial = droga.casacomercial.nombre;
+		}
+
+		[DataMember]
+		public int Id
+		{
+			get { return id; }
+			set { id = value; }
 		}
 
 		[DataMember]

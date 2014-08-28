@@ -9,6 +9,7 @@
   <xs:complexType name="DrogaDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="CasaComercial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
       <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="PorcentajeTDC" nillable="true" type="xs:float" />
       <xs:element minOccurs="0" name="StockSolution" nillable="true" type="xs:float" />

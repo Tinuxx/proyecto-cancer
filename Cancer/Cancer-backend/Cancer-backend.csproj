@@ -85,7 +85,7 @@
     <Compile Include="indice.cs">
       <DependentUpon>ProyectoCancer.tt</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IAdminVariables.cs" />
     <Compile Include="localizacion.cs">
       <DependentUpon>ProyectoCancer.tt</DependentUpon>
     </Compile>
@@ -135,7 +135,7 @@
     <Compile Include="seobtienen.cs">
       <DependentUpon>ProyectoCancer.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service1.cs" />
+    <Compile Include="AdminVariables.cs" />
     <Compile Include="terapiapersonalizada.cs">
       <DependentUpon>ProyectoCancer.tt</DependentUpon>
     </Compile>

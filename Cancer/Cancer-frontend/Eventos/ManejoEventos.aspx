@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/VistaPrincipal.Master" AutoEventWireup="true" CodeBehind="ManejoEventos.aspx.cs" Inherits="Cancer_frontend.Eventos.ManejoEventos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManejoEventos.aspx.cs" Inherits="Cancer_frontend.Eventos.ManejoEventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="pure-g">
         <div class="pure-u-1-2">

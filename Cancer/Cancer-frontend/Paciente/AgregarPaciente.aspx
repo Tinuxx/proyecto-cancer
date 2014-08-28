@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/VistaPrincipal.Master" AutoEventWireup="true" CodeBehind="AgregarPaciente.aspx.cs" Inherits="Cancer_frontend.Pacientes.AgregarPaciente" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AgregarPaciente.aspx.cs" Inherits="Cancer_frontend.Pacientes.AgregarPaciente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="wrapperMain" class="pure-g">
         <div class="pure-u-1-2 pure-form pure-form-stacked">

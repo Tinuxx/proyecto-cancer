@@ -50,8 +50,8 @@
                     <div class="pure-menu pure-menu-open">
                         <a class="pure-menu-heading" href="#">Proyecto Cáncer</a>
                         <ul>
-                            <li id="liBuscarPaciente" runat="server"><a runat="server" href="~/Pacientes/BuscarPaciente.aspx"><i class="fa fa-search fa-fw"></i> Buscar paciente</a></li>
-                            <li id="liAgregarPaciente" runat="server"><a runat="server" href="~/Pacientes/AgregarPaciente.aspx"><i class="fa fa-user fa-fw"></i> Agregar paciente</a></li>
+                            <li id="liBuscarPaciente" runat="server"><a runat="server" href="~/Paciente/BuscarPaciente.aspx"><i class="fa fa-search fa-fw"></i> Buscar paciente</a></li>
+                            <li id="liAgregarPaciente" runat="server"><a runat="server" href="~/Paciente/AgregarPaciente.aspx"><i class="fa fa-user fa-fw"></i> Agregar paciente</a></li>
                             <li id="liManejoEventos" runat="server"><a runat="server" href="~/Eventos/ManejoEventos.aspx"><i class="fa fa-bell fa-fw"></i> Manejo de eventos</a></li>
                             <li id="liAdminVariables" runat="server"><a runat="server" href="~/Variables/AdministracionVariables.aspx"><i class="fa fa-cog fa-fw"></i> Administración de variables</a></li>
                         </ul>

@@ -5,10 +5,76 @@
         <div class="pure-u-1 pure-form">
             <fieldset>
                 <legend>Detalles de las drogas</legend>
-                <asp:GridView ID="gridDrogas" AutoGenerateColumns="true" runat="server">
+                <!--OnRowDataBound="gridDrogas_RowDataBound"-->
+                <asp:GridView ID="gridDrogas" AutoGenerateColumns="False" runat="server" DataKeyNames="Id" AllowSorting="True" AllowPaging="True"
+                    OnRowCancelingEdit="gridDrogas_RowCancelingEdit"
+                    OnRowEditing="gridDrogas_RowEditing"
+                    OnRowUpdating="gridDrogas_RowUpdating"
+                    OnRowDeleting="gridDrogas_RowDeleting"
+                    OnPageIndexChanging="gridDrogas_PageIndexChanging">
+                    <Columns>
+                        <asp:TemplateField HeaderText="ID">
+                            <ItemTemplate>
+                                <asp:Label ID="lblID" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Nombre">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%# Eval("Nombre") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtNombre" runat="server" Text='<%# Eval("Nombre") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="100% TDC">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%# Eval("PorcentajeTDC") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtTDC" runat="server" Text='<%# Eval("PorcentajeTDC") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                          <asp:TemplateField HeaderText="Solución madre">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%# Eval("StockSolution") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtStockSolution" runat="server" Text='<%# Eval("StockSolution") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                          <asp:TemplateField HeaderText="Almacenamiento / Estabilidad">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%# Eval("StorageAndStability") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtStorageAndStability" runat="server" Text='<%# Eval("StorageAndStability") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                          <asp:TemplateField HeaderText="Casa Comercial">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%# Eval("CasaComercial") %>'></asp:Label>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox ID="txtCasaComercial" runat="server" Text='<%# Eval("CasaComercial") %>'></asp:TextBox>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ShowHeader="false">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="btnEditar" runat="server" CommandName="Edit" Text="Editar" ></asp:LinkButton>
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:LinkButton ID="btnActualizar" runat="server" CommandName="Update" Text="Actualizar" ></asp:LinkButton>
+                                <asp:LinkButton ID="btnCancelarEditar" runat="server" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
+                            </EditItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField ShowHeader="false">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="btnEliminar" runat="server" CommandName="Delete" Text="Eliminar" ></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
                 </asp:GridView>
             </fieldset>
-            
             <br />
             <div class="pure-form">
                 <fieldset>
